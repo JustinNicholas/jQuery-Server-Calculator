@@ -4,12 +4,13 @@ body {
 }
 .calcContainer {
     background-color: rgb(115, 115, 115);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     height: 310px;
     width: 250px;
     margin-right: auto;
     margin-left: auto;
+    border-radius: 10px;
 }
 input {
     margin-bottom: 5px;
@@ -23,6 +24,7 @@ input {
     background-color: aliceblue;
     line-height: 50px;
     margin-top: 5px;
+    border-radius: 10px;
 }
 
 /* .button:hover {
@@ -37,22 +39,29 @@ input {
     background-color: darkgray;
     line-height: 50px;
     margin-top: 5px;
+    border-radius: 10px;
 }
 
 .equationHistory {
     margin-right: auto;
     margin-left: auto;
-    width: 50%;
+    width: 250px;
     text-align: left;
+}
+
+.historyHeading {
+    text-align: center;
 }
 
 #c {
     background-color: red;
     width: 35px;
+    border-radius: 7px;
 }
 #ca {
     background-color: orange;
     width: 35px;
+    border-radius: 7px;
 }
 
 #plus, #minus, #multiply, #divide {
@@ -63,7 +72,8 @@ input {
     background-color: rgb(58, 201, 6);
 }
 
-#plus:hover, #minus:hover, #multiply:hover, #divide:hover, #equal:hover, .button:hover, #c:hover {
+#plus:hover, #minus:hover, #multiply:hover, #divide:hover, #equal:hover,
+.button:hover, #c:hover, #ca:hover, .answerScreen:hover, .historyButton:hover {
     background-color: darkgray;
 }
 
