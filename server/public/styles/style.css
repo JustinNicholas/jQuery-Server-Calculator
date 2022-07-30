@@ -2,33 +2,83 @@ body {
     background-color: aquamarine;
     text-align: center;
 }
-/* .calcContainer {
-    background-color: black;
-    height: 250px;
+.calcContainer {
+    background-color: rgb(115, 115, 115);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 310px;
     width: 250px;
-} */
-
+    margin-right: auto;
+    margin-left: auto;
+}
+input {
+    margin-bottom: 5px;
+    width: 130px;
+}
 .button {
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     text-align: center;
     background-color: aliceblue;
-    line-height: 40px;
+    line-height: 50px;
     margin-top: 5px;
 }
 
+/* .button:hover {
+    background-color: darkgray;
+} */
+
 .equalButton{
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     text-align: center;
     background-color: darkgray;
-    line-height: 40px;
+    line-height: 50px;
     margin-top: 5px;
 }
 
 .equationHistory {
-    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
     text-align: left;
+}
+
+#c {
+    background-color: red;
+    width: 35px;
+}
+#ca {
+    background-color: orange;
+    width: 35px;
+}
+
+#plus, #minus, #multiply, #divide {
+    background-color: yellow;
+}
+
+#equal {
+    background-color: rgb(58, 201, 6);
+}
+
+#plus:hover, #minus:hover, #multiply:hover, #divide:hover, #equal:hover, .button:hover, #c:hover {
+    background-color: darkgray;
+}
+
+.answerScreen {
+    line-height: 50px;
+    font-weight: 700;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    width: 220px;
+    height: 50px;
+    background-color: rgb(189, 188, 188);
+}
+
+.finalAnswer {
+    margin-top: 0;
+    margin-bottom: 0;
 }

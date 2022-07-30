@@ -1,7 +1,7 @@
 const e = require('express');
 const express = require('express');
 const app = express();
-const PORT =5000;
+const PORT = 5000;
 
 app.use(express.static('server/public'));
 
@@ -55,5 +55,7 @@ function runCalculation(){
     firstNum = Number(stringArray[0]);
     secondNum = Number(stringArray[1]);
     answer = firstNum / secondNum;
+ } else {
+    answer = currentEquation
  }
 }

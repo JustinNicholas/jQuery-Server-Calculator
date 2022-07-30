@@ -5,8 +5,10 @@ $(document).ready(onReady);
 function onReady() {
     console.log('JQ Wokring');
     $('.button').on('click', addChar);
-    $('#equal').on('click', sendEquation)
-    $('#c').on('click', clearCalc)
+    $('#equal').on('click', sendEquation);
+    $('#c').on('click', clearCalc);
+    $('#ca').on('click', clearAll);
+    $('.historyButton').on('click', addChar);
 }
 
 function addChar() {
@@ -59,9 +61,13 @@ function displayEquations(equations){
 }
 
 function displayAnswer(answer) {
-    $('.answer').empty();
-    $('.answer').append(`
-    <h1>Answer:</h1>
-    <p>${answer.answer}</p>
+    $('.answerScreen').empty();
+    $('.answerScreen').append(`
+    <p class="finalAnswer">${answer.answer}</p>
+    </div>
 `)
+}
+function clearAll() {
+    $('.answerScreen').empty();
+    $('#calcIn').val('');
 }
