@@ -45,14 +45,23 @@ function getEquations(){
     }).then(function(response){
         console.log(response);
         displayEquations(response);
+        displayAnswer(response);
     })
 }
 
 function displayEquations(equations){
     $('.history').empty();
-    for( let equation of equations ){
+    for( let equation of equations.equationHistory ){
         $('.history').append(`
             <p>${equation.calc}</p>
         `)
     }
+}
+
+function displayAnswer(answer) {
+    $('.answer').empty();
+    $('.answer').append(`
+    <h1>Answer:</h1>
+    <p>${answer.answer}</p>
+`)
 }

@@ -18,6 +18,16 @@ body {
     margin-top: 5px;
 }
 
+.equalButton{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    background-color: darkgray;
+    line-height: 40px;
+    margin-top: 5px;
+}
+
 .equationHistory {
     width: 100%;
     text-align: left;
