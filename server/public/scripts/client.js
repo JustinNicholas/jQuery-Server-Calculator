@@ -5,7 +5,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('JQ Wokring');
     $('.button').on('click', addChar);
-    $('#equal').on('click', sendCalc)
+    $('#equal').on('click', sendEquation)
     $('#c').on('click', clearCalc)
 }
 
@@ -19,21 +19,40 @@ function clearCalc() {
     $('#calcIn').val('');
 }
 
-function sendCalc() {
+function sendEquation() {
     console.log('sending calc to server');
-
+    let currentCalc = ($('#calcIn').val());
+    let currentCalcString = currentCalc.toString();
+    console.log(currentCalcString);
     $.ajax({
         method: 'POST',
         url: '/calc',
         data: {
-            calc: $('calcIn').text(),
+            calc: currentCalcString,
         }
     }).then(function(response){
         console.log(response);
-        getAnswer();
+        getEquations();
+    })
+    $('#calcIn').val('');
+}
+
+function getEquations(){
+    console.log('in get answer');
+    $.ajax({
+        method: 'GET',
+        url: '/calc'
+    }).then(function(response){
+        console.log(response);
+        displayEquations(response);
     })
 }
 
-function getAnswer(){
-
+function displayEquations(equations){
+    $('.history').empty();
+    for( let equation of equations ){
+        $('.history').append(`
+            <p>${equation.calc}</p>
+        `)
+    }
 }
