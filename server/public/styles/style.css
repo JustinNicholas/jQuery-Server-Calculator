@@ -1,3 +1,19 @@
 body {
     background-color: aquamarine;
+    text-align: center;
+}
+/* .calcContainer {
+    background-color: black;
+    height: 250px;
+    width: 250px;
+} */
+
+.button {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    background-color: aliceblue;
+    line-height: 40px;
+    margin-top: 5px;
 }
