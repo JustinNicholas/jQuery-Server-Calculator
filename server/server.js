@@ -34,6 +34,7 @@ app.post('/clear', (req, res) => {
     res.sendStatus(200);
 })
 
+//this calculator can handle negative numbers since the '-' us the last if else and is parsed at all other operators first
 function runCalculation(){
     let currentEquation = equationHistory[equationHistory.length-1].calc
     let stringArray = [];
@@ -45,11 +46,6 @@ function runCalculation(){
     firstNum = Number(stringArray[0]);
     secondNum = Number(stringArray[1]);
     answer = firstNum + secondNum;
- } else if (currentEquation.includes('-')){
-    stringArray = currentEquation.split('-');
-    firstNum = Number(stringArray[0]);
-    secondNum = Number(stringArray[1]);
-    answer = firstNum - secondNum;
  } else if (currentEquation.includes('*')){
     stringArray = currentEquation.split('*');
     firstNum = Number(stringArray[0]);
@@ -60,8 +56,13 @@ function runCalculation(){
     firstNum = Number(stringArray[0]);
     secondNum = Number(stringArray[1]);
     answer = firstNum / secondNum;
+ }  else if (currentEquation.includes('-')){
+    stringArray = currentEquation.split('-');
+    firstNum = Number(stringArray[0]);
+    secondNum = Number(stringArray[1]);
+    answer = firstNum - secondNum;
  } else {
-    answer = currentEquation
+    answer = currentEquation;
  }
 }
 
