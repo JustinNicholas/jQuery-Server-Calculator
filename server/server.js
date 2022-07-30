@@ -37,16 +37,23 @@ function runCalculation(){
  console.log('in runCalc');
  if (currentEquation.includes('+')){
     stringArray = currentEquation.split('+');
-    // console.log(stringArray);
     firstNum = Number(stringArray[0]);
     secondNum = Number(stringArray[1]);
     answer = firstNum + secondNum;
-    // console.log(answer);
  } else if (currentEquation.includes('-')){
     stringArray = currentEquation.split('-');
+    firstNum = Number(stringArray[0]);
+    secondNum = Number(stringArray[1]);
+    answer = firstNum - secondNum;
  } else if (currentEquation.includes('*')){
     stringArray = currentEquation.split('*');
+    firstNum = Number(stringArray[0]);
+    secondNum = Number(stringArray[1]);
+    answer = firstNum * secondNum;
  } else if (currentEquation.includes('/')){
     stringArray = currentEquation.split('/');
+    firstNum = Number(stringArray[0]);
+    secondNum = Number(stringArray[1]);
+    answer = firstNum / secondNum;
  }
 }
