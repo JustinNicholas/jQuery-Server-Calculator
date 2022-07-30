@@ -15,27 +15,30 @@ body {
 input {
     margin-bottom: 5px;
     width: 130px;
+    /* border-style: inset; */
 }
 .button {
     display: inline-block;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     text-align: center;
     background-color: aliceblue;
     line-height: 50px;
     margin-top: 5px;
     border-radius: 10px;
+    border-style: groove;
 }
 
 .equalButton{
     display: inline-block;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     text-align: center;
     background-color: darkgray;
     line-height: 50px;
     margin-top: 5px;
     border-radius: 10px;
+    border-style: groove;
 }
 
 .equationHistory {
@@ -79,9 +82,10 @@ input {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 10px;
-    width: 220px;
-    height: 50px;
+    width: 210px;
+    height: 45px;
     background-color: rgb(189, 188, 188);
+    border-style: inset;
 }
 
 .finalAnswer {

@@ -84,4 +84,4 @@ function clearHistory() {
         console.log(response);
     })
     getEquations();
-} //won't show history after clearing.
+}
