@@ -5,16 +5,19 @@ $(document).ready(onReady);
 function onReady() {
     console.log('JQ Wokring');
     $('.button').on('click', addChar);
+    $('.answerScreen').on('click', addChar);
     $('#equal').on('click', sendEquation);
     $('#c').on('click', clearCalc);
     $('#ca').on('click', clearAll);
-    $('.historyButton').on('click', addChar);
+    $('.history').on('click', '.historyButton', addChar);
+    getEquations();
 }
 
-function addChar() {
+function addChar() {;
     let char = $(this).text();
-    console.log(char);
-    $('#calcIn').val($('#calcIn').val() + char);
+    let noSpaceChar = char.split(" ").join("");
+    $('#calcIn').val($('#calcIn').val() + noSpaceChar);
+    $('.answerScreen').empty();
 }
 
 function clearCalc() {
@@ -53,21 +56,32 @@ function getEquations(){
 
 function displayEquations(equations){
     $('.history').empty();
-    for( let equation of equations.equationHistory ){
-        $('.history').append(`
-            <p>${equation.calc}</p>
-        `)
-    }
+        for( let equation of equations.equationHistory ){
+            $('.history').append(`
+                    <p class="historyButton">${equation.calc}</p>
+            `)
+        }
 }
 
 function displayAnswer(answer) {
     $('.answerScreen').empty();
     $('.answerScreen').append(`
-    <p class="finalAnswer">${answer.answer}</p>
-    </div>
-`)
+        <p class="finalAnswer">${answer.answer}</p>
+    `)
 }
 function clearAll() {
     $('.answerScreen').empty();
     $('#calcIn').val('');
+    $('.history').empty();
+    clearHistory();
 }
+
+function clearHistory() {
+    $.ajax({
+        method: 'POST',
+        url: '/clear',
+    }).then(function(response){
+        console.log(response);
+    })
+    getEquations();
+} //won't show history after clearing.

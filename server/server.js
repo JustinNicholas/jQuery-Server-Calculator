@@ -29,6 +29,11 @@ app.get('/calc', (req, res) => {
     });
 })
 
+app.post('/clear', (req, res) => {
+    clearHistory();
+    res.sendStatus(200);
+})
+
 function runCalculation(){
     let currentEquation = equationHistory[equationHistory.length-1].calc
     let stringArray = [];
@@ -58,4 +63,9 @@ function runCalculation(){
  } else {
     answer = currentEquation
  }
+}
+
+function clearHistory() {
+    equationHistory = [];
+    answer = '';
 }
