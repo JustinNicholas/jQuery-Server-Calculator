@@ -100,7 +100,7 @@ input {
     margin-bottom: 10px;
     width: 210px;
     height: 45px;
-    background-color:#fff;
+    background-color: rgb(225, 224, 224);
     border-style: inset;
     font-family: 'Press Start 2P', sans-serif;
 }
