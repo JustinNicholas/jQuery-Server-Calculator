@@ -1,3 +1,4 @@
+/* these styles are for our heading of 'jQuery Server calculator' in a retro look  */
 .heading {
     margin-right: auto;
     margin-left: auto;
@@ -11,6 +12,7 @@ body {
     text-align: center;
 
 }
+/* these styles are for our calculator size, shape and color */
 .calcContainer {
     background-color: rgb(158, 158, 158);
     padding-top: 12px;
@@ -22,10 +24,12 @@ body {
     border-radius: 10px;
     border-style: outset;
 }
+
 input {
     margin-bottom: 5px;
     width: 130px;
 }
+/* these styles are for our calculator buttons size, shape, font, and color */
 .button {
     display: inline-block;
     height: 45px;
@@ -40,18 +44,19 @@ input {
     font-family: 'Saira Semi Condensed', sans-serif;
 }
 
+/* these styles are for our equal buttons size, shape, font, and color. this is different class because there is different functionality with .button class */
 .equalButton{
     display: inline-block;
     height: 45px;
     width: 45px;
     text-align: center;
-    background-color: darkgray;
+    background-color: rgb(58, 201, 6);
     line-height: 50px;
     margin-top: 5px;
     border-radius: 10px;
     border-style: groove;
 }
-
+/* these styles are for our equation history sections size and font */
 .equationHistory {
     margin-right: auto;
     margin-left: auto;
@@ -61,6 +66,7 @@ input {
     font-weight: 200;
 }
 
+/* this is just a different font for the heading of our history section*/
 .historyHeading {
     text-align: left;
     line-height: 2.5rem;
@@ -68,6 +74,7 @@ input {
     font-weight: 200;
 }
 
+/* these styles are for our operator buttons size, shape, and color */
 #c {
     background-color: orange;
     width: 35px;
@@ -83,15 +90,13 @@ input {
     background-color: rgb(249, 249, 62);
 }
 
-#equal {
-    background-color: rgb(58, 201, 6);
-}
-
+/* these ar the alternate styles all clickable item that turn the background color grey when hover over to let users know they are clickable */
 #plus:hover, #minus:hover, #multiply:hover, #divide:hover, #equal:hover,
 .button:hover, #c:hover, #ca:hover, .answerScreen:hover, .historyButton:hover {
     background-color: darkgray;
 }
 
+/* these styles are for our answer screens size, shape, font, and color which gives an recessed look and retro numbers*/
 .answerScreen {
     line-height: 50px;
     font-weight: 700;
@@ -104,7 +109,7 @@ input {
     border-style: inset;
     font-family: 'Press Start 2P', sans-serif;
 }
-
+/* this removes the margin from final answer so nothing is shifted when displaying answer */
 .finalAnswer {
     margin-top: 0;
     margin-bottom: 0;
