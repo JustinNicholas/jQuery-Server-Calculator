@@ -39,25 +39,36 @@ function clearCalc() {
 }
 // this function sends the equation that is typed into the input field to the server when the equal button is clicked.
 function sendEquation() {
+
     // console.log('sending calc to server');
     // we set currentCalc equal to the value of the input and set it to a string in currentClacString.
     let currentCalc = ($('#calcIn').val());
     let currentCalcString = currentCalc.toString();
     // console.log(currentCalcString);
-    // ajax goes makes a post request to /calc and passes the data of the current calc string to the server.
-    $.ajax({
-        method: 'POST',
-        url: '/calc',
-        data: {
-            calc: currentCalcString,
-        }
-        //when ajax is done and recieves the ok from the server, we run the getEquations function.
-    }).then(function(response){
-        // console.log(response);
-        getEquations();
-    })
-    // we set the input field to empty again.
-    $('#calcIn').val('');
+    // we run an if statement to see if the user entered the numbers in correctly. If the equation ends with an operator, we send an alert to the user to add numbers after the operator. when they exit the pop up
+    // they can continue to type the equation they were writting
+    if (currentCalcString.endsWith('/') || currentCalcString.endsWith('*') || currentCalcString.endsWith('+') || currentCalcString.endsWith('-')){
+        alert('please enter number after operator');
+    // if the equation starts with an operator to we let the user know to start with a number and clear the input so they can start over without pushing the clear button.
+    } else if (currentCalcString.startsWith('/') || currentCalcString.startsWith('*') || currentCalcString.startsWith('+') || currentCalcString.startsWith('-')) {
+        alert('please enter number before operator');
+        $('#calcIn').val('');
+    } else {
+        // ajax goes makes a post request to /calc and passes the data of the current calc string to the server.
+        $.ajax({
+            method: 'POST',
+            url: '/calc',
+            data: {
+                calc: currentCalcString,
+            }
+            //when ajax is done and recieves the ok from the server, we run the getEquations function.
+        }).then(function(response){
+            // console.log(response);
+            getEquations();
+        })
+        // we set the input field to empty again.
+        $('#calcIn').val('');
+    }
 }
 
 // this function is called on page load, when the our post request to /calc is complete, and when our post request to /clear is complete

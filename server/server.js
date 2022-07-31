@@ -49,11 +49,13 @@ function runCalculation(){
     // firstNum and secondNum will be set to numbers that we parsed out from the string array.
     let firstNum = 0;
     let secondNum = 0;
+
 //  console.log('in runCalc');
 // we check if the current array contains a '+'. If it does, we set the stringArray equal to the currentEquation split at the '+'. for example 1+2 for a current equation
 // that is split at the '+' would make stringArray [1, 2]. We then set the firstNum variable to the Number of stringArray at 0. We also set the secondNum variable to the Number of stringArray at 1.
 // we finish by setting the global variable of answer to firstNum + secondNum. This process is repeated with all of the possible operators.
-// One unique thing about this calculator is that it can handle negative numbers since the '-' is the last if else and is parsed at all other operators first.
+// One unique thing about this calculator is that it can handle negative numbers since the '-' is the last if else and is parsed at all other operators first. However this only works
+// if the first number is positive and the second number is negative. If the first number was allowed to be negative this function would parse at the first '-'.
 // Also, if a user clicks equal before entering an operator, it will return the number entered as the answer due to the else statement.
  if (currentEquation.includes('+')){
     stringArray = currentEquation.split('+');
@@ -62,6 +64,7 @@ function runCalculation(){
     answer = firstNum + secondNum;
  } else if (currentEquation.includes('*')){
     stringArray = currentEquation.split('*');
+    console.log(stringArray);
     firstNum = Number(stringArray[0]);
     secondNum = Number(stringArray[1]);
     answer = firstNum * secondNum;
@@ -72,6 +75,7 @@ function runCalculation(){
     answer = firstNum / secondNum;
  }  else if (currentEquation.includes('-')){
     stringArray = currentEquation.split('-');
+    console.log(stringArray);
     firstNum = Number(stringArray[0]);
     secondNum = Number(stringArray[1]);
     answer = firstNum - secondNum;
