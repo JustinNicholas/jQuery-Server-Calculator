@@ -3,10 +3,9 @@ jQuery Server Calculator
 
 ## Description
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
-
 Duration: Weekend project (Friday, July 29th through Sunday, July 31th)
 
+Project goal:
 The goal of this project was to create a calculator that could add, subtract, multiply, and divide. All calculation must happen on the server side. It was recommended but not required to make this look like a real calculator to make it intuitive for users. I did my best to give my calculator a retro theme and make it look 3D by adding some different styl borders to the calculator container, calculator buttons, and the answer screen.
 
 Problems & Solutions:
@@ -23,22 +22,21 @@ languages and tools used for this project:
 -Express.js
 -Ajax
 
-Screen Shot
+Screen Shot:
 [Calculator Screenshot](images/calculatorScreenshot.png)
 
-Prerequisites
+Prerequisites:
 Node.js
 Express.js
 
-List other prerequisites here
-Installation
+Installation:
 To see the fully functional site, please:
 - Fork and Clone
 - Open up your editor of choice and run npm install express
 - Run npm start in the terminal
 - type http://localhost:5000 in your browser to view page
 
-Usage
+Usage:
 - Click the number and operator buttons or type numbers and operators into the input field.
 - Click the equal button to run the equation.
 - Answers will be shown on the calculator screen above the input field.
@@ -48,8 +46,8 @@ Usage
 - The orange 'c' button will clear the input field only.
 - The red 'ca' button will clear the answer screen, input fields, and equation history.
 
-Acknowledgement
+Acknowledgement:
 Thanks to Prime Digital Academy who equipped and helped me to make this application a reality.
 
-Support
+Support:
 If you have suggestions or issues, please email me at nicholasj964@yahoo.com
